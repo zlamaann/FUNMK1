@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 398476755}
   - component: {fileID: 398476757}
   - component: {fileID: 398476756}
+  - component: {fileID: 398476758}
   m_Layer: 5
   m_Name: MouseAim_Image
   m_TagString: Untagged
@@ -269,6 +270,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398476754}
   m_CullTransparentMesh: 0
+--- !u!114 &398476758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398476754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27ce9cbe843d924aa270b49b96527a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &484255533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,7 +6091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLAYER: {fileID: 543450653290953509}
-  Smoothing: 2
+  smoothing: 0.2
   offset: {x: 0, y: 0, z: -25}
 --- !u!81 &1934445460
 AudioListener:
@@ -7151,6 +7165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653290953509}
   - component: {fileID: 919132149572706720}
+  - component: {fileID: 919132149572706721}
   m_Layer: 0
   m_Name: PLAYER_NIEUPORT_11
   m_TagString: Untagged
@@ -7174,6 +7189,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &919132149572706721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149572706719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22d1e5116dbd574abfd4871c634c0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1934445461}
+  speedMove: 2
+  speedRotate: 0.5
 --- !u!33 &953876030584374160
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -26,8 +26,6 @@ public class PlaneTest : MonoBehaviour
 
         target = new Vector3(transform.position.x, transform.position.y, transform.position.z * 2);
 
-        //rb.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg - 90);
-        //rb.MovePosition(Vector3.MoveTowards(transform.position, target, speedMove * Time.deltaTime));
 
         transform.Translate(0, 0, speedMove * Time.deltaTime);
 
@@ -50,11 +48,6 @@ public class PlaneTest : MonoBehaviour
         }
 
         transform.Rotate(-vertical, horizontal, 0);
-        //transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        //rb.MovePosition(Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime));
-
-        //transform.position = Vector3.Lerp(transform.position, -target, speed * Time.deltaTime);
 
     }
 

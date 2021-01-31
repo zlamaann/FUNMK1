@@ -6,7 +6,7 @@ public class Camera_Follow : MonoBehaviour
 {
     public Transform PLAYER;
 
-    [SerializeField] private float Smoothing = 0.2f;
+    [SerializeField] private float smoothing = 0.2f;
 
     [SerializeField] private Vector3 offset;
 
@@ -37,7 +37,7 @@ public class Camera_Follow : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 posBeforeSmoothing = PLAYER.position + offset;
-        Vector3 posAfterSmoothing = Vector3.Lerp(transform.position, posBeforeSmoothing, Smoothing);
+        Vector3 posAfterSmoothing = Vector3.Lerp(transform.position, posBeforeSmoothing, smoothing);
         transform.position = posAfterSmoothing;
 
         transform.LookAt(PLAYER);

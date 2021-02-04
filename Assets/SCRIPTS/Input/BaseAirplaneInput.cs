@@ -18,23 +18,23 @@ public class BaseAirplaneInput : MonoBehaviour
     {
         get { return pitch; }
     }
-    protected float Roll
+    public float Roll
     {
         get { return roll; }
     }
-    protected float Yaw
+    public float Yaw
     {
         get { return yaw; }
     }
-    protected float Throttle
+    public float Throttle
     {
         get { return throttle; }
     }
-    protected int Flaps
+    public int Flaps
     {
         get { return flaps; }
     }
-    protected float Brake
+    public float Brake
     {
         get { return brake; }
     }
@@ -66,12 +66,12 @@ public class BaseAirplaneInput : MonoBehaviour
         brake = Input.GetKey(KeyCode.Space) ? 1f : 0f;
 
         //Process flaps inputs
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             flaps += 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             flaps -= 1;
         }

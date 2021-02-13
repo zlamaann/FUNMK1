@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class AirplaneEngine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Variables
+    public float maxForce = 200f;
+    public float maxRPM = 1200f;
+    #endregion
 
-    // Update is called once per frame
-    void Update()
+    #region Methods
+    public Vector3 CalculateForce(float throttle)
     {
-        
+        float finalThrottle = Mathf.Clamp01(throttle);
+        float finalPower = finalThrottle * maxForce;
+
+        Vector3 finalForce = transform.forward * finalPower;
+
+        return finalForce;
     }
+    #endregion;
 }

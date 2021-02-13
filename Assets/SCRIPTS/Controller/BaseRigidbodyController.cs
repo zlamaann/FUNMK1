@@ -19,7 +19,9 @@ public class BaseRigidbodyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        HandlePhysics();
+        if (rb) { 
+            HandlePhysics();
+        }
     }
 
     protected virtual void HandlePhysics(){}

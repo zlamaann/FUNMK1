@@ -493,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950096866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.274, z: 0.733}
+  m_LocalPosition: {x: 0, y: -0.274, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450653290953509}
@@ -1409,7 +1409,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2042687224
@@ -1467,7 +1467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042687222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1642,6 +1642,8 @@ GameObject:
   - component: {fileID: 825355167664577929}
   - component: {fileID: 6443260840957824759}
   - component: {fileID: 4581884360486589138}
+  - component: {fileID: 218535957099693551}
+  - component: {fileID: 218535957099693552}
   m_Layer: 0
   m_Name: WHEEL_DISC_R
   m_TagString: Untagged
@@ -1649,6 +1651,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &218535957099693551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218535957099693550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26aa3ce667abaa542b4f5f112a8e3219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!146 &218535957099693552
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218535957099693550}
+  m_Center: {x: 0.0075, y: -0.01, z: 0.1382}
+  m_Radius: 0.0035
+  m_SuspensionSpring:
+    spring: 35000
+    damper: 4500
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 5
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 1
 --- !u!1 &255895731040099706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149572706719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8662454856126338165}
@@ -2008,7 +2052,6 @@ GameObject:
   - component: {fileID: 6724724478890960569}
   - component: {fileID: 2037908152908640627}
   - component: {fileID: 8307738220440232808}
-  - component: {fileID: 722463483135927286}
   m_Layer: 0
   m_Name: WHEEL_RIM_L
   m_TagString: Untagged
@@ -2016,19 +2059,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &722463483135927286
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722463483135927285}
-  m_Material: {fileID: 13400000, guid: 6611703d80a154142aa91619ae5b11bf, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003342673
-  m_Center: {x: -0.007502609, y: -0.010099003, z: -0.011657814}
 --- !u!23 &743507598343991898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2251,7 +2281,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149572706719}
   serializedVersion: 2
-  m_Mass: 600
+  m_Mass: 3000
   m_Drag: 2
   m_AngularDrag: 2
   m_UseGravity: 1
@@ -2285,7 +2315,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 919132149572706721}
   centerOfGravity: {fileID: 950096867}
-  airplaneWeight: 600
+  airplaneWeight: 320
+  engines:
+  - {fileID: 1687354914083044140}
+  wheels:
+  - {fileID: 6455509895661345179}
+  - {fileID: 218535957099693551}
 --- !u!33 &953876030584374160
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2864,6 +2899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c49dfbd7edbad42a19845f5fea7b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxForce: 200
+  maxRPM: 1200
 --- !u!1 &1700428100420409432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4368,6 +4405,7 @@ GameObject:
   - component: {fileID: 9140525419987833092}
   - component: {fileID: 1598579467132475392}
   - component: {fileID: 1526247290776100575}
+  - component: {fileID: 4504467335285982459}
   m_Layer: 0
   m_Name: TAIL_WING_L
   m_TagString: Untagged
@@ -4375,6 +4413,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4504467335285982459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504467335285982458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010004823, y: 0.005412313, z: 0.00033477478}
+  m_Center: {x: -0.006046817, y: 0.03400743, z: 0.0031806352}
 --- !u!4 &4512740464658990734
 Transform:
   m_ObjectHideFlags: 0
@@ -4878,6 +4929,7 @@ GameObject:
   - component: {fileID: 6477548092292675040}
   - component: {fileID: 8796125178434664537}
   - component: {fileID: 631698908348678266}
+  - component: {fileID: 5230453575732455303}
   m_Layer: 0
   m_Name: FULSAGE
   m_TagString: Untagged
@@ -4885,6 +4937,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &5230453575732455303
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230453575732455302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.004276836
+  m_Height: 0.044996507
+  m_Direction: 1
+  m_Center: {x: 0.00051508663, y: 0.014010887, z: 0.001114778}
 --- !u!4 &5280112366994004218
 Transform:
   m_ObjectHideFlags: 0
@@ -5330,6 +5396,7 @@ GameObject:
   - component: {fileID: 6272134336244638627}
   - component: {fileID: 6833557406240750714}
   - component: {fileID: 970211125302346974}
+  - component: {fileID: 6034871786435937785}
   m_Layer: 0
   m_Name: TAIL_WING_R
   m_TagString: Untagged
@@ -5337,6 +5404,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6034871786435937785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034871786435937784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010004823, y: 0.005412313, z: 0.00033477478}
+  m_Center: {x: -0.006046817, y: 0.03400743, z: 0.0031806352}
 --- !u!23 &6045088658915681972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5544,6 +5624,7 @@ GameObject:
   - component: {fileID: 2168730245040815286}
   - component: {fileID: 1731449866278030953}
   - component: {fileID: 2946228370662365312}
+  - component: {fileID: 6228569749412766173}
   m_Layer: 0
   m_Name: WING_L
   m_TagString: Untagged
@@ -5551,6 +5632,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6228569749412766173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228569749412766172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031142822, y: 0.014913215, z: 0.002123984}
+  m_Center: {x: -0.019850254, y: -0.0047708936, z: 0.008880306}
 --- !u!23 &6247268851982006465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5843,6 +5937,8 @@ GameObject:
   - component: {fileID: 6941979860594849282}
   - component: {fileID: 3848741586036227404}
   - component: {fileID: 5432232340194659253}
+  - component: {fileID: 6455509895661345179}
+  - component: {fileID: 6455509895661345180}
   m_Layer: 0
   m_Name: WHEEL_DISC_L
   m_TagString: Untagged
@@ -5850,6 +5946,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6455509895661345179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455509895661345178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26aa3ce667abaa542b4f5f112a8e3219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!146 &6455509895661345180
+WheelCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455509895661345178}
+  m_Center: {x: -0.0075, y: -0.01, z: 0.1382}
+  m_Radius: 0.0035
+  m_SuspensionSpring:
+    spring: 35000
+    damper: 4500
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
+  m_Mass: 5
+  m_WheelDampingRate: 0.25
+  m_ForwardFriction:
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
+    m_Stiffness: 1
+  m_SidewaysFriction:
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
+    m_Stiffness: 1
+  m_Enabled: 0
 --- !u!1 &6477347154004065176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,7 +6031,6 @@ GameObject:
   - component: {fileID: 157797886069841024}
   - component: {fileID: 8885695393908295057}
   - component: {fileID: 1701809090549457266}
-  - component: {fileID: 6481971143192069943}
   m_Layer: 0
   m_Name: WHEEL_RIM_R
   m_TagString: Untagged
@@ -5901,36 +6038,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!146 &6481971143192069943
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6481971143192069942}
-  m_Center: {x: 0.0075, y: -0.01, z: 0.1382}
-  m_Radius: 0.002
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_Enabled: 1
 --- !u!4 &6510375850379682015
 Transform:
   m_ObjectHideFlags: 0
@@ -6177,6 +6284,7 @@ GameObject:
   - component: {fileID: 3296261463082263586}
   - component: {fileID: 7934236367974003343}
   - component: {fileID: 7833005766408760160}
+  - component: {fileID: 6795389100558034025}
   m_Layer: 0
   m_Name: TAIL_WING_FIN_R
   m_TagString: Untagged
@@ -6184,6 +6292,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6795389100558034025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795389100558034024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012607492, y: 0.004983614, z: 0.00033477572}
+  m_Center: {x: 0.0072943433, y: 0.039205477, z: 0.0031806347}
 --- !u!33 &6808662324214470458
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6529,6 +6650,7 @@ GameObject:
   - component: {fileID: 6400395218404829241}
   - component: {fileID: 6264989765161035326}
   - component: {fileID: 5173563719152256354}
+  - component: {fileID: 7250039514122971152}
   m_Layer: 0
   m_Name: WING_R
   m_TagString: Untagged
@@ -6536,6 +6658,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7250039514122971152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250039514122971151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031142823, y: 0.014913215, z: 0.002123986}
+  m_Center: {x: 0.019851498, y: -0.0047708936, z: 0.008880304}
 --- !u!4 &7264153450876224448
 Transform:
   m_ObjectHideFlags: 0
@@ -6878,6 +7013,7 @@ GameObject:
   - component: {fileID: 1412565626402953637}
   - component: {fileID: 4525940811048190596}
   - component: {fileID: 373397448560442059}
+  - component: {fileID: 7553458389338216891}
   m_Layer: 0
   m_Name: LOWER_WING_R
   m_TagString: Untagged
@@ -6885,6 +7021,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7553458389338216891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553458389338216890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025882062, y: 0.0076445877, z: 0.0023505532}
+  m_Center: {x: 0.020558177, y: -0.0018912485, z: -0.0031509046}
 --- !u!4 &7569244139072934522
 Transform:
   m_ObjectHideFlags: 0
@@ -7413,6 +7562,7 @@ GameObject:
   - component: {fileID: 3023181874582488243}
   - component: {fileID: 8232132593819714234}
   - component: {fileID: 5807990838782392057}
+  - component: {fileID: 8158678591411177622}
   m_Layer: 0
   m_Name: LOWER_WING_L
   m_TagString: Untagged
@@ -7420,6 +7570,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8158678591411177622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158678591411177621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025882063, y: 0.0076445877, z: 0.0023505574}
+  m_Center: {x: -0.020556934, y: -0.0018912407, z: -0.0031509022}
 --- !u!33 &8182636571922743908
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7799,6 +7962,7 @@ GameObject:
   - component: {fileID: 5688990972189829842}
   - component: {fileID: 7415665280064484091}
   - component: {fileID: 743507598343991898}
+  - component: {fileID: 8579983331445886160}
   m_Layer: 0
   m_Name: TAIL_WING_FIN_L
   m_TagString: Untagged
@@ -7806,6 +7970,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8579983331445886160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8579983331445886159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012607492, y: 0.004983614, z: 0.00033477478}
+  m_Center: {x: -0.007293102, y: 0.039205477, z: 0.0031806342}
 --- !u!1 &8592368122838412940
 GameObject:
   m_ObjectHideFlags: 0

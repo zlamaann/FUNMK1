@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WheelCollider))]
 public class AirplaneWheel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    #region Variables
+    private WheelCollider WheelCollider;
+    #endregion
+
+    #region Methods
+    private void Start()
     {
-        
+        WheelCollider = GetComponent<WheelCollider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitWheel()
     {
-        
+        if (WheelCollider)
+        {
+            WheelCollider.motorTorque = 0.0000000000001f;
+        }
     }
+    #endregion
 }

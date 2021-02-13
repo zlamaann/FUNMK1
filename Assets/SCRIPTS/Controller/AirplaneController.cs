@@ -11,9 +11,13 @@ public class AirplaneController : BaseRigidbodyController
     public Transform centerOfGravity;
 
     [Tooltip("Weight in kg")]
-    public float airplaneWeight = 600f;
+    public float airplaneWeight = 320f;
 
+    [Header("Engines")]
     public List<AirplaneEngine> engines = new List<AirplaneEngine>();
+
+    [Header("Wheels")]
+    public List<AirplaneWheel> wheels = new List<AirplaneWheel>();
     #endregion
 
     #region Methods
@@ -21,17 +25,29 @@ public class AirplaneController : BaseRigidbodyController
     {
         base.Start();
 
+        
         rb.mass = airplaneWeight;
         rb.centerOfMass = centerOfGravity.localPosition;
+
+        if (wheels.Count > 0)
+        {
+            foreach (AirplaneWheel wheel in wheels)
+            {
+                wheel.InitWheel();
+            }
+        }
     }
 
     protected override void HandlePhysics()
     {
-        HandleEngines();
-        HandleAerodynamics();
-        HandleSteering();
-        HandleBrakes();
-        HandleAltitude();
+        if (input)
+        {
+            HandleEngines();
+            HandleAerodynamics();
+            HandleSteering();
+            HandleBrakes();
+            HandleAltitude();
+        }
     }
 
     private void HandleAltitude()
@@ -58,7 +74,10 @@ public class AirplaneController : BaseRigidbodyController
     {
         if (engines.Count > 0)
         {
-
+            foreach (AirplaneEngine engine in engines)
+            {
+                rb.AddForce(engine.CalculateForce(input.Throttle));
+            }
         }
     }
     #endregion
